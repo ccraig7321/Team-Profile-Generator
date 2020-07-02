@@ -47,8 +47,9 @@ function getManager() {
         {
             type: "input",
             name: "email",
-            message: "What is the manager's email?"
-        },      {
+            message: "What is the manager's email address?"
+        },
+        {
             type: "input",
             name: "officeNumber",
             message: "What is the manager's office number?"
@@ -57,6 +58,57 @@ function getManager() {
     .then(function(answers){
         var manager = new Manager(answers.name, employeeArray.length, answers.email, answers.officeNumber)
        employeeArray.push(manager)
+       console.log(employeeArray)
+       newEmployee()
+    })
+}
+
+function getEngineer() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "What is the engineer's name?"
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is the engineer's email address?"
+        },
+        {
+            type: "input",
+            name: "github",
+            message: "What is the engineer's github username?"
+        },
+    ])
+    .then(function(answers){
+        var engineer = new Engineer(answers.name, employeeArray.length, answers.email, answers.github)
+       employeeArray.push(engineer)
+       console.log(employeeArray)
+       newEmployee()
+    })
+}
+
+function getIntern() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "What is the intern's name?"
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is the intern's email?"
+        },      {
+            type: "input",
+            name: "officeNumber",
+            message: "What school did the intern attend?"
+        },
+    ])
+    .then(function(answers){
+        var intern = new Intern(answers.name, employeeArray.length, answers.email, answers.school)
+       employeeArray.push(intern)
        console.log(employeeArray)
        newEmployee()
     })
@@ -75,13 +127,19 @@ function newEmployee(){
         if(answers.choice == "Manager"){
             getManager()
         }
+        if(answers.choice == "Engineer"){
+            getEngineer()
+        }
+        if(answers.choice == "Intern"){
+            getIntern()
+        }
         else{
             var html = render(employeeArray)
             fs.writeFile(outputPath, html, function(err){
                 if (err){
                     return console.log(err);
                 }
-                console.log("Success! File was written to log.md")
+                // console.log("Success! File was written to team.html")
             })
         }
     })
