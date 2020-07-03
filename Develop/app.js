@@ -102,7 +102,7 @@ function getIntern() {
             message: "What is the intern's email?"
         },      {
             type: "input",
-            name: "officeNumber",
+            name: "school",
             message: "What school did the intern attend?"
         },
     ])

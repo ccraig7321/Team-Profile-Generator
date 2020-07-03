@@ -3,4 +3,13 @@
     margin-bottom: 2rem;
     background-color: lightpink;
     border-radius: .3rem;
+    color: white;
+}
+
+#random{
+    color: green;
+}
+
+.card-title{
+    color: red;
 }
