@@ -60,10 +60,12 @@ This application had a total of 4 test suites for a total of 17 test that we run
 <br><br>
 ___
 
-### Link to Video Guide
+### Links for GitHub and Video Guide
 <br>
 https://github.com/ccraig7321/Team-Profile-Generator
 <br><br>
+
+https://drive.google.com/file/d/1X0YvBXcun7t_IDxDVWLbcbJP2BDq5Wih/view
 ___
 
 ### License
